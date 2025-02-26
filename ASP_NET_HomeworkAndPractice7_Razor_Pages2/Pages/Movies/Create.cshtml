@@ -1,0 +1,49 @@
+﻿@page
+@model ASP_NET_HomeworkAndPractice7_Razor_Pages2.Pages.Movies.CreateModel
+@{
+}
+<div class="container">
+	@if (HttpContext.Request.Method == "POST")
+	{
+		@* <h2>@Model.Message</h2> *@
+		@if (!string.IsNullOrEmpty(Model.Message))
+		{
+			<div>
+				@Html.Raw(Model.Message)  <!-- This renders the HTML safely -->
+			</div>
+		}
+	}
+
+	<form method="post">		
+		<div class="mb3">
+			<label class="form-label" for="fTitle">Title</label>
+			<input type="text" name="title" id="fTitle"
+				   class="form-control" />
+		</div>
+		<div class="mb3">
+			<label class="form-label" for="fDirector">Director</label>
+			<input type="text" name="director" id="fDirector"
+				   class="form-control" />
+		</div>
+		<div class="mb3">
+			<label class="form-label" for="fStyle">Style</label>
+			<input type="text" name="style" id="fStyle"
+				   class="form-control" />
+		</div>
+		<div class="mb3">
+			<label class="form-label" for="fDescription">Description</label>
+			<input type="text" name="description" id="fDescription"
+				   class="form-control" />
+		</div>
+		<div class="mb3">
+			<label class="form-label">Sessions</label>
+			<input type="text" name="sessions" id="fSessions"
+				   class="form-control" />
+		</div>
+		<br/>
+		<div class="mb-3">
+			<button type="submit" class="btn btn-primary">Create</button>
+		</div>
+		<br />
+	</form>
+</div>

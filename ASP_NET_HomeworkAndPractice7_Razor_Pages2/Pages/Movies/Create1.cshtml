@@ -1,0 +1,59 @@
+﻿@page
+@model ASP_NET_HomeworkAndPractice7_Razor_Pages2.Pages.Movies.Create1Model
+@{
+}
+<div class="container">
+	@if (HttpContext.Request.Method == "POST" && Model.Movie is not null)
+	{
+		<h1>Added movie with following data:</h1>
+		<h2>Id: @Model.Movie.Id</h2>
+		<h2>Title: @Model.Movie!.Title</h2>
+		<h2>Director: @Model.Movie!.Director</h2>
+		<h2>Style: @Model.Movie!.Style</h2>
+		<h2>Description: @Model.Movie!.Description</h2>
+		<h2>Sessions: @Model.Movie!.Sessions</h2>
+	}
+	@* @if (Model.ErrorMessages is not null) *@
+	@* { *@
+	@* 	<div class="alert alert-danger" role="alert"> *@
+	@* 		<ul> *@
+	@* 			@foreach (string error in Model.ErrorMessages) *@
+	@* 			{ *@
+	@* 				<li>@error</li> *@
+	@* 			} *@
+	@* 		</ul> *@
+	@* 	</div> *@
+	@* } *@
+	<form method="post">
+		<div class="mb3">
+			<label class="form-label" for="fTitle">Title</label>
+			<input type="text" name="title" id="fTitle"
+				   class="form-control" />
+		</div>
+		<div class="mb3">
+			<label class="form-label" for="fDirector">Director</label>
+			<input type="text" name="director" id="fDirector"
+				   class="form-control" />
+		</div>
+		<div class="mb3">
+			<label class="form-label" for="fStyle">Style</label>
+			<input type="text" name="style" id="fStyle"
+				   class="form-control" />
+		</div>
+		<div class="mb3">
+			<label class="form-label" for="fDescription">Description</label>
+			<input type="text" name="description" id="fDescription"
+				   class="form-control" />
+		</div>
+		<div class="mb3">
+			<label class="form-label">Sessions</label>
+			<input type="text" name="sessions" id="fSessions"
+				   class="form-control" />
+		</div>
+		<br />
+		<div class="mb-3">
+			<button type="submit" class="btn btn-primary">Create</button>
+		</div>
+		<br />
+	</form>
+</div>

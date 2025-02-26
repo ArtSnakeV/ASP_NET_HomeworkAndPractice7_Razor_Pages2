@@ -1,0 +1,23 @@
+﻿@page
+@model ASP_NET_HomeworkAndPractice7_Razor_Pages2.Pages.Movies.IndexModel
+@{
+}
+
+<h1>Cinema</h1>
+<div class="container">
+    @foreach (var movie in Model.Movies)
+    {
+        <div class="card w-100 mb-3">
+            <div class="card-body">
+                <h5 class="card-title">@movie.Title</h5>
+                <div>
+                    <p class="card-text">Director: @movie.Director</p>
+                    <p class="card-text">Style: @movie.Style</p>
+                    <p class="card-text">Description: @movie.Description</p>
+                    <p class="card-text">Sessions: @movie.Sessions</p>
+                </div>
+                <a href="#" class="btn btn-primary">Button</a>
+            </div>
+        </div>
+    }
+</div>
