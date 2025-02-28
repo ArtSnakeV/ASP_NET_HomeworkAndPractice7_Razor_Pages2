@@ -1,0 +1,14 @@
+﻿@page "{id}"
+@model ASP_NET_HomeworkAndPractice8_Razor_Pages3.Pages.Movies.DeleteModel
+@{
+}
+<div class="container">
+	<h1>Are You really want delete movie: @(Model.Movie.Id). @Model.Movie.Title
+		@Model.Movie.Director
+	</h1>
+	<form method="post" style="display: inline">
+		<input type="hidden" name="id" value="@Model.Movie.Id" />
+		<button type="submit" class="btn btn-warning">Delete</button>
+	</form>
+	<a a href="/movies" class="btn btn-secondary">Return</a>
+</div>

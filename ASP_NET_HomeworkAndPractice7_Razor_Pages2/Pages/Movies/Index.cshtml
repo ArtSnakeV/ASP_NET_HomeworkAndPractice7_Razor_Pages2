@@ -5,6 +5,9 @@
 
 <h1>Cinema</h1>
 <div class="container">
+    <div>
+        <a href="/movies/create1">Add movie</a>
+    </div>
     @foreach (var movie in Model.Movies)
     {
         <div class="card w-100 mb-3">
@@ -16,7 +19,12 @@
                     <p class="card-text">Description: @movie.Description</p>
                     <p class="card-text">Sessions: @movie.Sessions</p>
                 </div>
-                <a href="#" class="btn btn-primary">Button</a>
+                <a href="/movies/edit/@movie.Id" class="btn btn-primary">Edit</a>
+                <form method="post" style="display: inline">
+                    <input type="hidden" name="id" value="@movie.Id" />
+                    <button type="submit" class="btn btn-warning">Delete</button>
+                    <a href="/movies/delete/@movie.Id">Delete with confirmation</a>
+                </form>
             </div>
         </div>
     }

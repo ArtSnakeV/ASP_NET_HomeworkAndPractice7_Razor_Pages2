@@ -17,19 +17,21 @@ namespace ASP_NET_HomeworkAndPractice7_Razor_Pages2.Pages.Movies
         }
 
         [BindProperty]
-        public Movie? Movie { get; set; }
+        public Movie Movie { get; set; } = new();
         public IMovieRepository Repository { get; }
 
         public void OnGet()
         {
         }
 
-        public void OnPost()
+        public IActionResult OnPost()
         {
             if(ModelState.IsValid && Movie is not null)
             {
                 repository.Create(Movie);
+                return RedirectToPage("Index");
             }
+            return Page();
         }
     }
 }

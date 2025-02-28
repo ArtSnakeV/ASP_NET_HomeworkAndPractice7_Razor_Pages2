@@ -1,0 +1,40 @@
+﻿@page "{id}"
+@model ASP_NET_HomeworkAndPractice8_Razor_Pages3.Pages.Movies.EditModel
+@{
+}
+<div class="container">
+	<input type="hidden" name="Id" value="@Model.Movie.Id"/>
+
+	<form method="post">
+		<div class="mb-3">
+			<label class="form-label" for="fTitle">Title</label>
+			<input type="text" name="title" id="fTitle"
+				   class="form-control" value="@Model.Movie.Title"/>
+		</div>
+		<div class="mb-3">
+			<label class="form-label" for="fDirector">Director</label>
+			<input type="text" name="director" id="fDirector"
+				   class="form-control" value="@Model.Movie.Director" />
+		</div>
+		<div class="mb-3">
+			<label class="form-label" for="fStyle">Style</label>
+			<input type="text" name="style" id="fStyle"
+				   class="form-control" value="@Model.Movie.Style" />
+		</div>
+		<div class="mb-3">
+			<label class="form-label" for="fDescription">Description</label>
+			<input type="text" name="description" id="fDescription"
+				   class="form-control" value="@Model.Movie.Description" />
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Sessions</label>
+			<input type="text" name="sessions" id="fSessions"
+				   class="form-control" value="@Model.Movie.Sessions" />
+		</div>
+		<br />
+		<div class="mb-3">
+			<button type="submit" class="btn btn-primary">Save</button>
+		</div>
+		<br />
+	</form>
+</div>

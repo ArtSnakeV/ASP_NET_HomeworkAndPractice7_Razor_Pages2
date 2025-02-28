@@ -2,7 +2,7 @@
 @model ASP_NET_HomeworkAndPractice7_Razor_Pages2.Pages.Movies.Create1Model
 @{
 }
-<div class="container">
+<div class="container">	
 	@if (HttpContext.Request.Method == "POST" && Model.Movie is not null)
 	{
 		<h1>Added movie with following data:</h1>
@@ -28,12 +28,12 @@
 		<div class="mb3">
 			<label class="form-label" for="fTitle">Title</label>
 			<input type="text" name="title" id="fTitle"
-				   class="form-control" />
+				   class="form-control" value="@Model.Movie.Title"/>
 		</div>
 		<div class="mb3">
 			<label class="form-label" for="fDirector">Director</label>
 			<input type="text" name="director" id="fDirector"
-				   class="form-control" />
+				   class="form-control" value="@Model.Movie.Director" />
 		</div>
 		<div class="mb3">
 			<label class="form-label" for="fStyle">Style</label>
@@ -43,12 +43,12 @@
 		<div class="mb3">
 			<label class="form-label" for="fDescription">Description</label>
 			<input type="text" name="description" id="fDescription"
-				   class="form-control" />
+				   class="form-control" value="@Model.Movie.Description" />
 		</div>
 		<div class="mb3">
 			<label class="form-label">Sessions</label>
 			<input type="text" name="sessions" id="fSessions"
-				   class="form-control" />
+				   class="form-control" value="@Model.Movie.Sessions" />
 		</div>
 		<br />
 		<div class="mb-3">
