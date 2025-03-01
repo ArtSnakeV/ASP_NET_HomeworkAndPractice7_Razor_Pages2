@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ASP_NET_HomeworkAndPractice8_Razor_Pages3.Pages.Movies
 {
-    [IgnoreAntiforgeryToken]
+    //[IgnoreAntiforgeryToken]
     public class DeleteModel : PageModel
     {
         private readonly IMovieRepository repository;

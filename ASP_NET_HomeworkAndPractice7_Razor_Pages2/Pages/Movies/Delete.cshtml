@@ -6,9 +6,10 @@
 	<h1>Are You really want delete movie: @(Model.Movie.Id). @Model.Movie.Title
 		@Model.Movie.Director
 	</h1>
-	<form method="post" style="display: inline">
+	<form method="post" style="display: inline" asp-antiforgery="true">
 		<input type="hidden" name="id" value="@Model.Movie.Id" />
 		<button type="submit" class="btn btn-warning">Delete</button>
 	</form>
-	<a a href="/movies" class="btn btn-secondary">Return</a>
+	@* <a href="/movies" class="btn btn-secondary">Return</a> *@
+	<a asp-page="Index" class="btn btn-secondary">Return</a>
 </div>

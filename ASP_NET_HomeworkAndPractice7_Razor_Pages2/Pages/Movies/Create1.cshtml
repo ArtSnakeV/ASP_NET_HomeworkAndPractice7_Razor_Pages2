@@ -24,31 +24,52 @@
 	@* 		</ul> *@
 	@* 	</div> *@
 	@* } *@
-	<form method="post">
+
+	@* asp-antiforgery="true"  let us to switch off [IgnoreAntiforgeryToken]*@
+	
+	@* Form tag-helper *@
+	<form method="post" asp-antiforgery="true">
 		<div class="mb3">
-			<label class="form-label" for="fTitle">Title</label>
-			<input type="text" name="title" id="fTitle"
-				   class="form-control" value="@Model.Movie.Title"/>
+			@* Label tag helper *@
+			<label asp-for="Movie.Title"></label>
+			@* <label class="form-label" for="fTitle">Title</label> *@
+			<input asp-for="Movie.Title" type="text"
+				class="form-control"/>
+			@* <input type="text" name="title" id="fTitle" *@
+			@* 	   class="form-control" value="@Model.Movie.Title"/> *@
 		</div>
 		<div class="mb3">
-			<label class="form-label" for="fDirector">Director</label>
-			<input type="text" name="director" id="fDirector"
-				   class="form-control" value="@Model.Movie.Director" />
-		</div>
-		<div class="mb3">
-			<label class="form-label" for="fStyle">Style</label>
-			<input type="text" name="style" id="fStyle"
+			<label class="form-label" asp-for="Movie.Director"></label>
+			@* <label class="form-label" for="fDirector">Director</label> *@
+			<input type="text" asp-for="Movie.Director"
 				   class="form-control" />
+			@* <input type="text" name="director" id="fDirector" *@
+			@* 	   class="form-control" value="@Model.Movie.Director" /> *@
 		</div>
 		<div class="mb3">
-			<label class="form-label" for="fDescription">Description</label>
-			<input type="text" name="description" id="fDescription"
-				   class="form-control" value="@Model.Movie.Description" />
+			<label class="form-label" asp-for="Movie.Style"></label>
+			@* <label class="form-label" for="fStyle">Style</label> *@
+			<input type="text" asp-for="Movie.Style"
+				   class="form-control" />
+			@* <input type="text" name="style" id="fStyle" *@
+			@* 	   class="form-control" /> *@
 		</div>
 		<div class="mb3">
-			<label class="form-label">Sessions</label>
-			<input type="text" name="sessions" id="fSessions"
-				   class="form-control" value="@Model.Movie.Sessions" />
+			<label class="form-label" asp-for="Movie.Description"></label>
+			@* <label class="form-label" for="fDescription">Description</label> *@
+			<input type="text" asp-for="Movie.Description"
+				   class="form-control" />
+			@* <input type="text" name="description" id="fDescription" *@
+			@* 	   class="form-control" value="@Model.Movie.Description" /> *@
+		</div>
+		<div class="mb3">
+			@* @Html.LabelFor(t => t.Movie.Sessions, new { id = "sessionsLabel", @class="form-label"}) *@
+			<label class="form-label" asp-for="Movie.Sessions"></label>
+			@* <label class="form-label">Sessions</label> *@
+			<input type="text" asp-for="Movie.Sessions"
+				   class="form-control" />
+			@* <input type="text" name="sessions" id="fSessions" *@
+			@* 	   class="form-control" value="@Model.Movie.Sessions" /> *@
 		</div>
 		<br />
 		<div class="mb-3">
@@ -56,4 +77,8 @@
 		</div>
 		<br />
 	</form>
+	@* Anchor tag-helper *@
+	<a asp-page="Index" class="btn btn-outline-secondary">Return</a>
 </div>
+
+			

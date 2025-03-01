@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ASP_NET_HomeworkAndPractice7_Razor_Pages2.Pages.Movies
 {
-    [IgnoreAntiforgeryToken]
+    //[IgnoreAntiforgeryToken]
 
     public class Create1Model : PageModel
     {

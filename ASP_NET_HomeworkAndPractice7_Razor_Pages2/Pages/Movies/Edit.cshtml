@@ -3,33 +3,48 @@
 @{
 }
 <div class="container">
-	<input type="hidden" name="Id" value="@Model.Movie.Id"/>
-
-	<form method="post">
+	<form method="post" asp-antiforgery="true">
+		<input type="hidden" asp-for="Movie.Id" />
+		@* <input type="hidden" name="Id" value="@Model.Movie.Id"/> *@
 		<div class="mb-3">
-			<label class="form-label" for="fTitle">Title</label>
-			<input type="text" name="title" id="fTitle"
-				   class="form-control" value="@Model.Movie.Title"/>
+			<label class="form-label" asp-for="Movie.Title"></label>
+			@* <label class="form-label" for="fTitle">Title</label> *@
+			<input type="text" asp-for="Movie.Title"
+				   class="form-control" />
+			@* <input type="text" name="title" id="fTitle" *@
+			@* 	   class="form-control" value="@Model.Movie.Title"/> *@
 		</div>
 		<div class="mb-3">
-			<label class="form-label" for="fDirector">Director</label>
-			<input type="text" name="director" id="fDirector"
-				   class="form-control" value="@Model.Movie.Director" />
+			<label asp-for="Movie.Director" class="form-label" ></label>
+			@* <label class="form-label" for="fDirector">Director</label> *@
+			<input type="text" asp-for="Movie.Director"
+				   class="form-control"  />
+			@* <input type="text" name="director" id="fDirector" *@
+			@* 	   class="form-control" value="@Model.Movie.Director" /> *@
 		</div>
 		<div class="mb-3">
-			<label class="form-label" for="fStyle">Style</label>
-			<input type="text" name="style" id="fStyle"
-				   class="form-control" value="@Model.Movie.Style" />
+			<label class="form-label" asp-for="Movie.Style"></label>
+			@* <label class="form-label" for="fStyle">Style</label> *@
+			<input type="text" asp-for="Movie.Style"
+				   class="form-control" />
+			@* <input type="text" name="style" id="fStyle" *@
+			@* 	   class="form-control" value="@Model.Movie.Style" /> *@
 		</div>
 		<div class="mb-3">
-			<label class="form-label" for="fDescription">Description</label>
-			<input type="text" name="description" id="fDescription"
-				   class="form-control" value="@Model.Movie.Description" />
+			<label class="form-label" asp-for="Movie.Description"></label>
+			@* <label class="form-label" for="fDescription">Description</label> *@
+			<input type="text" asp-for="Movie.Description"
+				   class="form-control" />
+			@* <input type="text" name="description" id="fDescription" *@
+			@* 	   class="form-control" value="@Model.Movie.Description" /> *@
 		</div>
 		<div class="mb-3">
-			<label class="form-label">Sessions</label>
-			<input type="text" name="sessions" id="fSessions"
-				   class="form-control" value="@Model.Movie.Sessions" />
+			<label class="form-label" asp-for="Movie.Sessions"></label>
+			@* <label class="form-label">Sessions</label> *@
+			<input type="text" asp-for="Movie.Sessions"
+				   class="form-control" />
+			@* <input type="text" name="sessions" id="fSessions" *@
+			@* 	   class="form-control" value="@Model.Movie.Sessions" /> *@
 		</div>
 		<br />
 		<div class="mb-3">
